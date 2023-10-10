@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital@1&family=Raleway:wght@900&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+--transition: 1s cubic-bazier(.05, 0, 1);
+}
+
+body{
+    background-color: black;
+    color: white;
+    font-family: Raleway;
+    overflow: hidden;
+}
+.logo{
+    width: 20vh;
+    height: 20vw;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 95vh;
+    top: 10vh;
+    z-index: 1;
+}
+.layers{
+    perspective: 1000px;
+    overflow: hidden;
+}
+.leyers__container{
+    height: 100vh;
+    min-height: 500px;
+    transform-style: preserve-3d;
+    transform: rotateY(var(--move-x)) rotateX(var(--move-y));
+    will-change: transform;
+    transition: transform ;
+}
+.layers__item{
+    position: absolute;
+    inset: -5vw;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.layer-1 {
+    transform: translateZ(-55px) scale(1.1);
+}
+.layer-2 {
+    transform: translateZ(80px) scale(.88);
+}
+.layer-3 {
+    transform: translateZ(150px) scale(.8);
+}
+.layer-4 {
+    transform: translateZ(170px) scale(.9);
+}
+.layer-5 {
+    transform: translateZ(250px) scale(.9);
+}
+.layer-6 {
+    transform: translateZ(300px) scale(.88);
+}
+.hero-content{
+    font-size: 8vh;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: -.3vh;
+    line-height: 1.35em;
+    margin-top: -.5vh;
+}
+.hero-content span {
+    display: block;
+}
+.hero-content__p {
+    text-transform: none;
+    font-family: merriweather;
+    font-size: 4vh;
+    letter-spacing: normal;
+}
+.buttom-start{
+    font-family: Arial;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 2vh;
+    letter-spacing: normal;
+    padding: 20px 20px;
+    background-color: transparent;
+    color: white;
+    border-radius: 10em;
+    border: rgb(255 255 255 / .4) 3px solid;
+    outline: none;
+    cursor: pointer;
+}
+.layer-4, .layer-5, .layer-6 {
+    pointer-events: none;
+}
